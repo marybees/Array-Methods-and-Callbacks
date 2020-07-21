@@ -59,8 +59,14 @@ console.log(getYears);
 /* Task 5: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 
 let winners = []
-const getWinners = getFinals.forEach((item) => {
-    winners.push(getFinals[0]["Win conditions"]);
+const getWinners = getFinals.forEach((game) => {
+    if (game["Home Team Goals"] > game["Away Team Goals"]) {
+        winners.push(game["Home Team Name"]);
+    } else if (game["Home Team Goals"] < game["Away Team Goals"]) {
+        winners.push(game["Away Team Name"]);
+    } else {
+        winners.push("Tie");
+    }      
 });
 
 console.log(winners);
