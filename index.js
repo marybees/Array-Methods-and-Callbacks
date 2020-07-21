@@ -22,12 +22,13 @@ console.log(objectByYear[0]["Home Team Name"]);
 console.log(objectByYear[0]["Away Team Name"]);
 console.log(objectByYear[0]["Away Team Goals"]);
 console.log(objectByYear[0]["Home Team Goals"]);
+console.log(objectByYear[0]["Win conditions"]);
 
-const winnerByYear = objectByYear.filter((item) => {
-    return objectByYear["Away Team Goals"] > objectByYear["Home Team Goals"]
-});
+// const winnerByYear = objectByYear.filter((item) => {
+//     return objectByYear[0]["Away Team Goals"] < objectByYear[0]["Home Team Goals"]
+// });
 
-console.log(winnerByYear["Home Team Name"]);
+// console.log(winnerByYear[0]["Home Team Name"]);
 
 // //Winner
 // Away Team Goals > Home Team Goals
