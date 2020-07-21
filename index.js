@@ -12,8 +12,8 @@ console.log('its working');
 (d) Away Team goals for 2014 world cup final // [7]
 (e) Winner of 2014 world cup final */ // []
 
-const objectByYear = fifaData.filter((object) => {
-    return object.Year === 2014 && object.Stage === "Final";
+const objectByYear = fifaData.filter((game) => {
+    return game.Year === 2014 && game.Stage === "Final";
 });
 
 console.log(objectByYear);
@@ -24,21 +24,17 @@ console.log(objectByYear[0]["Away Team Goals"]);
 console.log(objectByYear[0]["Home Team Goals"]);
 console.log(objectByYear[0]["Win conditions"]);
 
-// const winnerByYear = objectByYear.filter((item) => {
-//     return objectByYear[0]["Away Team Goals"] < objectByYear[0]["Home Team Goals"]
+// const winnerByYear = objectByYear.filter((game) => {
+//     if (game["Home Team Goals"] > game["Away Team Goals"]) {
+//         return game["Home Team Name"];
+//     } else if (game["Home Team Goals"] < game["Away Team Goals"]) {
+//         return game["Away Team Name"];
+//     } else {
+//         return "Tie";
+//     }   
 // });
 
-// console.log(winnerByYear[0]["Home Team Name"]);
-
-// //Winner
-// Away Team Goals > Home Team Goals
-// return Away Team Name
-
-// Home Team Goals > Away Team Goals
-// return Home Team Name
-
-// Away Team Goals === Home Team Goals
-// return "tie game"
+// console.log(winnerByYear);
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
@@ -79,11 +75,11 @@ Parameters:
  * callback function getYears
  */
 
-function getWinnersByYear(/* code here */) {
+const getWinnersByYear = getFinals.forEach((game) => {
+    return `In ${getYears}, ${getWinners} won the world cup!`
+});
 
-};
-
-getWinnersByYear();
+console.log(getWinnersByYear);
 
 /* Task 7: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
