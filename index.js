@@ -71,13 +71,17 @@ Parameters:
 function getWinnersByYear(data1, data2) {
     let year = [];
     let country = [];
+    let result = [];
     data1.forEach(function(item) {
         year.push(item);
     })
     data2.forEach(function(item) {
         country.push(item);
     })
-    return `In ${year[0]}, ${country[0]} won the world cup!`
+    for(let i = 0; i < year.length; i++) {
+        result.push(`In ${year[i]}, ${country[i]} won the world cup!`); 
+    }
+    return result;
 }
 console.log(getWinnersByYear(getYears(getFinals, fifaData), getWinners(getFinals(fifaData))));
 
@@ -86,11 +90,11 @@ console.log(getWinnersByYear(getYears(getFinals, fifaData), getWinners(getFinals
 function getAverageGoals(data) {
     // console.log(data.length); //851
     let homeGoalAverage = data.reduce(function(accumulatedGoals, game) {
-        return Math.round((accumulatedGoals + game["Home Team Goals"]) / data.length);
+        return (accumulatedGoals + game["Home Team Goals"]) / data.length;
     },0);
 
     let awayGoalAverage = data.reduce(function(accumulatedGoals, game) {
-        return Math.round((accumulatedGoals + game["Away Team Goals"]) / data.length);
+        return (accumulatedGoals + game["Away Team Goals"]) / data.length;
     },0);
 
     return `Home Goal Average: ${homeGoalAverage}, Away Goal Average: ${awayGoalAverage}`;
