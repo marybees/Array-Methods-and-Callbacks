@@ -27,18 +27,9 @@ console.log(objectByYear[0]["Win conditions"]);
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
 function getFinals(data) {
-    // let callback = function(game) {
-    //     return game.Stage === 'Final';
-    // }
-    // return data.filter(callback); 
-
     return data.filter(function(game) {
         return game.Stage === 'Final';
     })
-
-    // return data.filter((game) => {
-    //     return game.Stage === "Final";
-    // });
 }
 console.log(getFinals(fifaData));
 
@@ -77,7 +68,6 @@ Parameters:
  * callback function getYears
  */
 
- 
 function getWinnersByYear(data1, data2) {
     let year = [];
     let country = [];
@@ -90,8 +80,6 @@ function getWinnersByYear(data1, data2) {
     return `In ${year[0]}, ${country[0]} won the world cup!`
 }
 console.log(getWinnersByYear(getYears(getFinals, fifaData), getWinners(getFinals(fifaData))));
-
-
 
 /* Task 7: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
