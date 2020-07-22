@@ -78,10 +78,12 @@ Parameters:
  */
 
  
-function getWinnersByYear(getYears, getWinners) {
-
-    return `In ${getYears}, ${getWinners} won the world cup!`
+function getWinnersByYear(data1, data2) {
+    let year = data1;
+    let country = data2;
+    return `In ${year}, ${country} won the world cup!`
 }
+console.log(getWinnersByYear(getYears(getFinals, fifaData), getWinners(fifaData)));
 
 /* Task 7: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
